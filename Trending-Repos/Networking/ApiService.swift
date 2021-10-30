@@ -46,7 +46,6 @@ class ApiService {
             } catch let error {
                 completion(.failure(error))
             }
-            
         }
         dataTask?.resume()
     }

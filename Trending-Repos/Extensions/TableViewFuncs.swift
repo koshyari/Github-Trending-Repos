@@ -13,6 +13,11 @@ extension GithubVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row >= (ans?.count ?? 0) {
+            errorView.isHidden = false
+            return UITableViewCell()
+        }
+        
         //Pagination Condition
         if current_page < total_pages && indexPath.row == (ans?.count ?? 1) - 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "loading")
@@ -20,7 +25,6 @@ extension GithubVC: UITableViewDataSource, UITableViewDelegate {
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! TableViewCell
-
             cell.configure(with: (ans?[indexPath.row])!)
             return cell
         }

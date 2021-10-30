@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
@@ -206,24 +209,79 @@
                                     <constraint firstItem="qF2-5r-cnu" firstAttribute="leading" secondItem="TyK-gs-JG1" secondAttribute="leading" id="OBk-6i-BdF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPQ-tk-3HK" userLabel="errorView">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nointernet_connection" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-ms-Pow">
+                                        <rect key="frame" x="82" y="252" width="250" height="258"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ha6-ms-Pow" secondAttribute="height" multiplier="33:34" id="ACj-zM-hDn"/>
+                                            <constraint firstAttribute="width" constant="250" id="LgJ-zn-ywq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNu-jP-M0p">
+                                        <rect key="frame" x="16" y="698" width="382" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="O6B-94-ehh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                        <state key="normal" title="Retry">
+                                            <color key="titleColor" red="0.19215686274509802" green="0.69019607843137254" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FlV-eh-PnO"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-j6-JJI">
+                                        <rect key="frame" x="109" y="534" width="196.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An alien is probably blocking your signal." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fva-KS-hrM">
+                                        <rect key="frame" x="72" y="563.5" width="270.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XNu-jP-M0p" firstAttribute="leading" secondItem="QPQ-tk-3HK" secondAttribute="leading" constant="16" id="9RE-PA-lBq"/>
+                                    <constraint firstItem="QIC-j6-JJI" firstAttribute="top" secondItem="Ha6-ms-Pow" secondAttribute="bottom" constant="24" id="9w6-SH-pVx"/>
+                                    <constraint firstAttribute="bottom" secondItem="XNu-jP-M0p" secondAttribute="bottom" constant="16" id="EkM-gZ-0R3"/>
+                                    <constraint firstAttribute="trailing" secondItem="XNu-jP-M0p" secondAttribute="trailing" constant="16" id="OGN-4i-0G5"/>
+                                    <constraint firstItem="Ha6-ms-Pow" firstAttribute="centerX" secondItem="QPQ-tk-3HK" secondAttribute="centerX" id="Ove-q8-WNF"/>
+                                    <constraint firstItem="QIC-j6-JJI" firstAttribute="centerX" secondItem="QPQ-tk-3HK" secondAttribute="centerX" id="aTf-jp-2xj"/>
+                                    <constraint firstItem="fva-KS-hrM" firstAttribute="centerX" secondItem="QPQ-tk-3HK" secondAttribute="centerX" id="dDc-i6-yIw"/>
+                                    <constraint firstItem="Ha6-ms-Pow" firstAttribute="centerY" secondItem="QPQ-tk-3HK" secondAttribute="centerY" id="sPn-Nz-bHM"/>
+                                    <constraint firstItem="fva-KS-hrM" firstAttribute="top" secondItem="QIC-j6-JJI" secondAttribute="bottom" constant="8" id="vu3-6V-TjA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QPQ-tk-3HK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CtO-rc-l1M"/>
                             <constraint firstItem="u5g-U4-1dp" firstAttribute="top" secondItem="cZb-5a-5V0" secondAttribute="bottom" constant="14" id="HX4-7b-Qkm"/>
                             <constraint firstItem="u5g-U4-1dp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S4S-zh-kp8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f3J-Bw-Vhc" secondAttribute="trailing" constant="16" id="Y6E-T4-xnb"/>
                             <constraint firstItem="u5g-U4-1dp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aJc-O2-S68"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TyK-gs-JG1" secondAttribute="trailing" constant="16" id="bUe-hZ-URw"/>
                             <constraint firstItem="f3J-Bw-Vhc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="dhm-nb-zRA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPQ-tk-3HK" secondAttribute="trailing" id="ffy-IA-qRz"/>
+                            <constraint firstItem="QPQ-tk-3HK" firstAttribute="top" secondItem="u5g-U4-1dp" secondAttribute="top" id="lrm-Rq-vnz"/>
                             <constraint firstItem="TyK-gs-JG1" firstAttribute="top" secondItem="cZb-5a-5V0" secondAttribute="bottom" constant="5" id="pgf-Mu-hAc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QPQ-tk-3HK" secondAttribute="bottom" id="sOL-Cw-L4A"/>
                             <constraint firstItem="cZb-5a-5V0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tYI-He-tnW"/>
                             <constraint firstItem="u5g-U4-1dp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wUq-Yu-FRU"/>
                             <constraint firstItem="cZb-5a-5V0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="zQZ-eu-g9o"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorView" destination="QPQ-tk-3HK" id="iKx-tP-VeE"/>
                         <outlet property="menuView" destination="TyK-gs-JG1" id="xLE-sL-xPD"/>
+                        <outlet property="retryButton" destination="XNu-jP-M0p" id="plT-8c-GLy"/>
                         <outlet property="table" destination="u5g-U4-1dp" id="oun-9D-qon"/>
                     </connections>
                 </viewController>
@@ -234,6 +292,7 @@
     </scenes>
     <resources>
         <image name="more-black-24" width="96" height="96"/>
+        <image name="nointernet_connection" width="594" height="612"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

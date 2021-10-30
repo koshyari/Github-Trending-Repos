@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D63EB4F7272C73C600FAE79F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63EB4F6272C73C600FAE79F /* Extensions.swift */; };
+		D63EB4F7272C73C600FAE79F /* TableViewFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63EB4F6272C73C600FAE79F /* TableViewFuncs.swift */; };
 		D6813246272A4566000A72A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6813245272A4566000A72A2 /* AppDelegate.swift */; };
 		D6813248272A4566000A72A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6813247272A4566000A72A2 /* SceneDelegate.swift */; };
 		D681324A272A4566000A72A2 /* GithubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6813249272A4566000A72A2 /* GithubVC.swift */; };
@@ -18,10 +18,11 @@
 		D6813268272A5750000A72A2 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6813267272A5750000A72A2 /* Repo.swift */; };
 		D681326B272A57A1000A72A2 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681326A272A57A1000A72A2 /* ApiService.swift */; };
 		D681326F272A57BE000A72A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D681326E272A57BE000A72A2 /* Constants.swift */; };
+		D694FEB1272D8ABA00EB376E /* LoadSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694FEB0272D8ABA00EB376E /* LoadSubviews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D63EB4F6272C73C600FAE79F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D63EB4F6272C73C600FAE79F /* TableViewFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFuncs.swift; sourceTree = "<group>"; };
 		D6813242272A4566000A72A2 /* Trending-Repos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trending-Repos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6813245272A4566000A72A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6813247272A4566000A72A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +37,8 @@
 		D6813267272A5750000A72A2 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		D681326A272A57A1000A72A2 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		D681326E272A57BE000A72A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D694FEAA272D82E800EB376E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		D694FEB0272D8ABA00EB376E /* LoadSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSubviews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +55,8 @@
 		D63EB4F5272C73B600FAE79F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D63EB4F6272C73C600FAE79F /* Extensions.swift */,
+				D63EB4F6272C73C600FAE79F /* TableViewFuncs.swift */,
+				D694FEB0272D8ABA00EB376E /* LoadSubviews.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,6 +126,7 @@
 			children = (
 				D681325F272A461B000A72A2 /* Roboto-Medium.ttf */,
 				D6813260272A461B000A72A2 /* Roboto-Regular.ttf */,
+				D694FEAA272D82E800EB376E /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -206,9 +211,10 @@
 			files = (
 				D681326B272A57A1000A72A2 /* ApiService.swift in Sources */,
 				D681324A272A4566000A72A2 /* GithubVC.swift in Sources */,
+				D694FEB1272D8ABA00EB376E /* LoadSubviews.swift in Sources */,
 				D6813264272A515A000A72A2 /* TableViewCell.swift in Sources */,
 				D6813268272A5750000A72A2 /* Repo.swift in Sources */,
-				D63EB4F7272C73C600FAE79F /* Extensions.swift in Sources */,
+				D63EB4F7272C73C600FAE79F /* TableViewFuncs.swift in Sources */,
 				D681326F272A57BE000A72A2 /* Constants.swift in Sources */,
 				D6813246272A4566000A72A2 /* AppDelegate.swift in Sources */,
 				D6813248272A4566000A72A2 /* SceneDelegate.swift in Sources */,
