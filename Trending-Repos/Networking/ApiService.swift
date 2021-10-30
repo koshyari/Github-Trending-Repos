@@ -10,8 +10,8 @@ import Foundation
 class ApiService {
     var dataTask: URLSessionDataTask?
     
-    func parseJSON(page: Int, completion: @escaping(Result<Repo, Error>) -> Void) {
-        let API = "https://api.github.com/search/repositories?q=android&per_page=50&sort=stars&page=\(page)&order=desc&since=daily"
+    func parseJSON(sort: String, page: Int, completion: @escaping(Result<Repo, Error>) -> Void) {
+        let API = "https://api.github.com/search/repositories?q=android&per_page=50&sort=\(sort)&page=\(page)&order=desc&since=daily"
         guard let url = URL(string: API) else {return}
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in

@@ -17,11 +17,17 @@ class GithubVC: UIViewController {
     
     var repos: Repo?
     var ans: [Items]? = []
+    
+    //For Collapsing Cells
     var isCollapsed = true
     var selectedIdx = -1
     
+    //For Pagination
     let total_pages = Constants.totalPages
     var current_page = 1
+    
+    //For Repo Sort Feature
+    var sort_param = "stars"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,7 @@ class GithubVC: UIViewController {
     }
     
     func fetchRepos(completion: @escaping () -> ()) {
-        apiService.parseJSON(page: current_page) { [weak self] (result) in
+        apiService.parseJSON(sort: sort_param, page: current_page) { [weak self] (result) in
             switch result {
             case .success(let listOf):
                 let temp: [Items] = listOf.items
@@ -83,17 +89,33 @@ class GithubVC: UIViewController {
     }
     
     @IBAction func starsTapped(_ sender: UIButton) {
-        ans?.sort { (item1: Items, item2: Items) in
-            return (item1.stargazers_count ?? 0) > (item2.stargazers_count ?? 0)
+        guard sort_param != "stars" else {return}
+        
+        self.ans?.removeAll()
+        sort_param = "stars"
+        current_page = 1
+        fetchRepos { [weak self] in
+            self?.table.reloadData()
         }
-        table.reloadData()
+//        ans?.sort { (item1: Items, item2: Items) in
+//            return (item1.stargazers_count ?? 0) > (item2.stargazers_count ?? 0)
+//        }
+//        table.reloadData()
     }
     
     @IBAction func nameTapped(_ sender: UIButton) {
-        ans?.sort { (item1: Items, item2: Items) in
-            return (item1.name ?? "") < (item2.name ?? "")
+        guard sort_param != "name" else {return}
+        
+        self.ans?.removeAll()
+        sort_param = "name"
+        current_page = 1
+        fetchRepos { [weak self] in
+            self?.table.reloadData()
         }
-        table.reloadData()
+//        ans?.sort { (item1: Items, item2: Items) in
+//            return (item1.name ?? "") < (item2.name ?? "")
+//        }
+//        table.reloadData()
     }
 }
 
