@@ -137,6 +137,23 @@
                                             <outlet property="userName" destination="75W-nu-Vbm" id="9Lj-aM-dDr"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loading" rowHeight="251" id="OcX-X0-PAk">
+                                        <rect key="frame" x="0.0" y="279" width="414" height="251"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OcX-X0-PAk" id="Bds-Y9-TnG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="251"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9jT-LR-9lT">
+                                                    <rect key="frame" x="188.5" y="107" width="37" height="37"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9jT-LR-9lT" firstAttribute="centerY" secondItem="Bds-Y9-TnG" secondAttribute="centerY" id="7Sh-7P-quN"/>
+                                                <constraint firstItem="9jT-LR-9lT" firstAttribute="centerX" secondItem="Bds-Y9-TnG" secondAttribute="centerX" id="jRv-mc-Mgc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyK-gs-JG1">
@@ -216,7 +233,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="more-black-24" width="36" height="36"/>
+        <image name="more-black-24" width="96" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

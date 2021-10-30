@@ -16,9 +16,12 @@ class GithubVC: UIViewController {
     let refreshControl = UIRefreshControl()
     
     var repos: Repo?
-    var ans: [Items]?
+    var ans: [Items]? = []
     var isCollapsed = true
     var selectedIdx = -1
+    
+    let total_pages = Constants.totalPages
+    var current_page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +34,12 @@ class GithubVC: UIViewController {
     }
     
     func fetchRepos(completion: @escaping () -> ()) {
-        apiService.parseJSON(page: 1) { [weak self] (result) in
+        apiService.parseJSON(page: current_page) { [weak self] (result) in
             switch result {
             case .success(let listOf):
-                self?.ans = listOf.items
-                //self?.ans?.append(contentsOf: listOf.items)
+                let temp: [Items] = listOf.items
+                self?.ans?.append(contentsOf: temp)
+                print("Repo count: \(self?.ans?.count ?? 0)")
                 completion()
             case .failure(let error):
                 print("Error in processing JSON Data: \(error)")
@@ -66,7 +70,7 @@ class GithubVC: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        //self.ans?.removeAll()
+        self.ans?.removeAll()
         fetchRepos { [weak self] in
             self?.table.reloadData()
         }
