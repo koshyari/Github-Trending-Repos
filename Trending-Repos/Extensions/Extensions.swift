@@ -13,20 +13,26 @@ extension GithubVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == ans?.count ?? 0 - 1 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "loading")
-//            return cell!
-//        }
-//        else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! TableViewCell
-//
-//            cell.configure(with: (ans?[indexPath.row])!)
-//            return cell
-//        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! TableViewCell
+        //Pagination Condition
+        if current_page < total_pages && indexPath.row == (ans?.count ?? 1) - 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "loading")
+            return cell!
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! TableViewCell
 
-        cell.configure(with: (ans?[indexPath.row])!)
-        return cell
+            cell.configure(with: (ans?[indexPath.row])!)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if current_page < total_pages && indexPath.row == (ans?.count ?? 1) - 1 {
+            current_page = current_page + 1
+            fetchRepos { [weak self] in
+                self?.table.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
