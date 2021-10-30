@@ -44,4 +44,11 @@ extension GithubVC {
         }
         refreshControl.endRefreshing()
     }
+    
+    func loadAllViews() {
+        loadTableView()
+        loadMenuView()
+        loadErrorView()
+        loadRefreshControl()
+    }
 }

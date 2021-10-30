@@ -60,19 +60,3 @@ extension GithubVC: UITableViewDataSource, UITableViewDelegate {
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
-
-//Add icon to label
-extension UILabel {
-    func addLeading(image: UIImage, text:String) {
-        let attachment = NSTextAttachment()
-        attachment.image = image
-
-        let attachmentString = NSAttributedString(attachment: attachment)
-        let mutableAttributedString = NSMutableAttributedString()
-        mutableAttributedString.append(attachmentString)
-        
-        let string = NSMutableAttributedString(string: text, attributes: [:])
-        mutableAttributedString.append(string)
-        self.attributedText = mutableAttributedString
-    }
-}
